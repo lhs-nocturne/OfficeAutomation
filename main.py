@@ -29,7 +29,7 @@ def on_menu_click(button, func):
 
 # 首页对应的功能
 def show_function_one():
-    label = tk.Label(right_frame, text="您好，仅供学习交流使用。", font=("", 14), fg="black")
+    label = tk.Label(right_frame, text="您好，欢迎使用。", font=("", 14), fg="black")
     label.grid(row=0, column=0, pady=100, sticky=tk.NSEW)
     # label = tk.Label(right_frame, text="免责声明：使用本软件如若产生任何不良后果，软件作者不负任何法律责任。", font=("", 8))
     # label.grid(row=1, column=0, pady=200, sticky=tk.S)
