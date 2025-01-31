@@ -13,7 +13,7 @@ class Game2048:
         # 将窗口放置在屏幕中间
         screen_width = self.window.winfo_screenwidth()
         screen_height = self.window.winfo_screenheight()
-        # 增大窗口尺寸两倍
+        # 增大尺寸
         window_width = 800
         window_height = 800
         x = (screen_width - window_width) // 2
