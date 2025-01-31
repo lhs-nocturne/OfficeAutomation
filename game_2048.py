@@ -5,7 +5,7 @@ class Game2048:
     def __init__(self, master):
         # 使用 Toplevel 来创建二级窗口
         self.window = tk.Toplevel(master)
-        self.window.title("2048 游戏")
+        self.window.title("2048")
 
         # 禁用窗口最大化
         self.window.resizable(False, False)

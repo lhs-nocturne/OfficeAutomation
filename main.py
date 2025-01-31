@@ -17,12 +17,14 @@ except:
 # 记录当前选中的菜单按钮
 current_selected = None
 
-# 处理菜单按钮点击事件
+# 处理菜单按钮点击事件,改变按钮颜色
 def on_menu_click(button, func):
     global current_selected
+    # 如果有之前选中的按钮，将其恢复默认颜色和文字颜色
     if current_selected:
-        current_selected.config(bg="SystemButtonFace")
-    button.config(bg="#C8C7C6")
+        current_selected.config(bg="SystemButtonFace", fg="black")
+    # 当前点击的按钮变色，文字变为白色
+    button.config(bg="#07C160", fg="white")
     current_selected = button
     for widget in right_frame.winfo_children():
         widget.destroy()
@@ -79,24 +81,27 @@ root.grid_rowconfigure(0, weight=1)
 root.grid_columnconfigure(1, weight=1)
 
 # 创建菜单按钮
-menu_button1 = tk.Button(left_frame, width=16, bg="#E5E5E5", text="首页", command=lambda: on_menu_click(menu_button1, show_function_one))
+menu_button1 = tk.Button(left_frame, width=18, bg="#E5E5E5", text="首页",  cursor="hand2",command=lambda: on_menu_click(menu_button1, show_function_one))
 menu_button1.grid(row=0, column=0, pady=0, sticky="ew")
 
-menu_button2 = tk.Button(left_frame, width=16, bg="#E5E5E5", text="拆分Excel(页签版)", command=lambda: on_menu_click(menu_button2, lambda: show_split_excel_by_sheet(right_frame, root)))
+menu_button2 = tk.Button(left_frame, width=18, bg="#E5E5E5", text="拆分Excel (页签版)",  cursor="hand2",command=lambda: on_menu_click(menu_button2, lambda: show_split_excel_by_sheet(right_frame, root)))
 menu_button2.grid(row=1, column=0, pady=0, sticky="ew")
 
-menu_button3 = tk.Button(left_frame, width=16, bg="#E5E5E5", text="合并Excel(页签版)", command=lambda: on_menu_click(menu_button3, lambda: show_merge_excel_by_sheet(right_frame, root)))
+menu_button3 = tk.Button(left_frame, width=18, bg="#E5E5E5", text="合并Excel (页签版)",  cursor="hand2",command=lambda: on_menu_click(menu_button3, lambda: show_merge_excel_by_sheet(right_frame, root)))
 menu_button3.grid(row=2, column=0, pady=0, sticky="ew")
 
-menu_button4 = tk.Button(left_frame, width=16, bg="#E5E5E5", text="合并Excel(内容版)", command=lambda: on_menu_click(menu_button4, lambda: show_merge_excel_by_first_sheet(right_frame, root)))
+menu_button4 = tk.Button(left_frame, width=18, bg="#E5E5E5", text="合并Excel (内容版)",  cursor="hand2",command=lambda: on_menu_click(menu_button4, lambda: show_merge_excel_by_first_sheet(right_frame, root)))
 menu_button4.grid(row=3, column=0, pady=0, sticky="ew")
 
-menu_button5 = tk.Button(left_frame, width=16, bg="#E5E5E5", text="Excel批量转CSV", command=lambda: on_menu_click(menu_button5, lambda: show_excel_to_csv(right_frame, root)))
+menu_button5 = tk.Button(left_frame, width=18, bg="#E5E5E5", text="Excel批量转CSV", cursor="hand2", command=lambda: on_menu_click(menu_button5, lambda: show_excel_to_csv(right_frame, root)))
 menu_button5.grid(row=4, column=0, pady=0, sticky="ew")
 
+menu_button6 = tk.Button(left_frame, width=18, bg="#E5E5E5", text="数据库表结构导出", cursor="hand2", command=lambda: on_menu_click(menu_button6, lambda: show_excel_to_csv(right_frame, root)))
+menu_button6.grid(row=5, column=0, pady=0, sticky="ew")
+
 # 关于菜单按钮
-menu_button_last = tk.Button(left_frame, width=16, bg="#E5E5E5", text="关于", command=lambda: on_menu_click(menu_button_last, lambda: show_relax(right_frame, root)))
-menu_button_last.grid(row=5, column=0, pady=0, sticky="ew")
+menu_button_last = tk.Button(left_frame, width=18, bg="#E5E5E5", text="关于", cursor="hand2", command=lambda: on_menu_click(menu_button_last, lambda: show_relax(right_frame, root)))
+menu_button_last.grid(row=6, column=0, pady=0, sticky="ew")
 
 # 默认显示第一个功能，并模拟点击第一个菜单按钮的效果
 # on_menu_click(menu_button1, show_function_one)

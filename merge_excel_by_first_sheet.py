@@ -228,7 +228,7 @@ def show_merge_excel_by_first_sheet(frame, root):
     label_text = ("注：该功能为按第一个页签的内容行内容将多个Excel文件进行合并，且Excel内容格式保持一致，"
                   "支持后缀为.xls和.xlsx两种格式（建议使用.xlsx为后缀的文件），"
                   "输出合并后的文件统一为.xlsx后缀。浏览选择需要合并的目录，"
-                  "且选定保存的目标Excel，输入表头占用行数，输入 0 表示没有表头，执行合并即可。")
+                  "且选定保存的目标Excel，输入表头行数程序会自动过滤重复表头，默认0表示没有表头，执行合并即可。")
     output_label = tk.Label(frame, text=label_text, justify=tk.LEFT, wraplength=627)
     output_label.grid(row=4, column=0, padx=5, pady=20, columnspan=3)
 
