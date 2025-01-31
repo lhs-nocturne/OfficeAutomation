@@ -75,7 +75,7 @@ def show_excel_to_csv(frame, root):
 
     # 合并按钮
     merge_button = tk.Button(frame, text="执行转换", command=start_conversion)
-    merge_button.grid(row=2, column=1, padx=10, sticky=tk.EW)
+    merge_button.grid(row=2, column=1, padx=10, pady=10,sticky=tk.EW)
 
     # 功能概述
     label_text = ("注：该功能为批量的将Excel转换为csv文件(支持.xlsx和xls后缀的文件)，"

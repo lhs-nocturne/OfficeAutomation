@@ -115,7 +115,7 @@ def merge_excel_files(source_folder, target_file, root):
         # 显示错误提示框
         root.after(0, lambda: messagebox.showerror("错误", f"合并过程中出现错误：{str(e)}"))
     finally:
-        # 显示成功提示框
+        # 销毁遮罩
         overlay.destroy()
 
 def show_merge_excel_by_sheet(frame, root):
@@ -158,11 +158,11 @@ def show_merge_excel_by_sheet(frame, root):
 
     # 合并按钮
     merge_button = tk.Button(frame, text="合并Excel文件", command=merge_excel)
-    merge_button.grid(row=2, column=1, padx=10, sticky=tk.EW)
+    merge_button.grid(row=2, column=1, pady=10,sticky=tk.EW)
 
     # 功能概述
-    label_text = ("注：该功能为按页签合并Excel文件,支持后缀为.xls和.xlsx两种格式，输出合并后的文件统一为.xlsx后缀，"
-                  "输出文件的页签和源文件页签命名保持一致。浏览选择需要合并的目录，且选定保存的目标Excel，"
-                  "执行合并即可。(该功能对.xlsx后缀的文件支持较好)")
+    label_text = ("注：该功能为按页签将多个Excel文件进行合并,支持后缀为.xls和.xlsx两种格式（建议使用.xlsx为后缀的文件），"
+                  "输出合并后的文件统一为.xlsx后缀，输出文件的页签和源文件页签命名保持一致。浏览选择需要合并的目录，"
+                  "且选定保存的目标Excel，执行合并即可。")
     output_label = tk.Label(frame, text=label_text, justify=tk.LEFT, wraplength=627)
     output_label.grid(row=3, column=0, padx=5, pady=20, columnspan=3)
