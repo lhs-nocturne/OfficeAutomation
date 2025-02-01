@@ -126,24 +126,28 @@ def show_split_excel_by_sheet(frame, root):
     # 创建选择 Excel 文件的组件
     excel_label = tk.Label(frame, text="Excel文件:")
     excel_label.grid(row=0, column=0, padx=5, pady=5, sticky=tk.E)
+    excel_label = tk.Label(frame, text="*", fg="red")
+    excel_label.grid(row=0, column=1, padx=5, pady=5, sticky=tk.E)
     excel_entry = tk.Entry(frame, width=35)
-    excel_entry.grid(row=0, column=1, padx=5, pady=5, sticky=tk.EW)
+    excel_entry.grid(row=0, column=2, padx=5, pady=5, sticky=tk.EW)
     excel_button = tk.Button(frame, text="浏览", command=select_excel_file)
-    excel_button.grid(row=0, column=2, padx=5, pady=5, sticky=tk.W)
+    excel_button.grid(row=0, column=3, padx=5, pady=5, sticky=tk.W)
 
     # 创建选择输出目录的组件
     output_label = tk.Label(frame, text="目标目录:")
     output_label.grid(row=1, column=0, padx=5, pady=5, sticky=tk.E)
+    excel_label = tk.Label(frame, text="*", fg="red")
+    excel_label.grid(row=1, column=1, padx=5, pady=5, sticky=tk.E)
     output_entry = tk.Entry(frame, width=35)
-    output_entry.grid(row=1, column=1, padx=5, pady=5, sticky=tk.EW)
+    output_entry.grid(row=1, column=2, padx=5, pady=5, sticky=tk.EW)
     output_button = tk.Button(frame, text="浏览", command=select_output_directory)
-    output_button.grid(row=1, column=2, padx=5, pady=5, sticky=tk.W)
+    output_button.grid(row=1, column=3, padx=5, pady=5, sticky=tk.W)
 
     # 创建拆分按钮
     split_button = tk.Button(frame, text="拆分Excel文件", command=split_excel)
-    split_button.grid(row=2, column=1, pady=10, sticky=tk.EW)
+    split_button.grid(row=2, column=2, pady=10, sticky=tk.EW)
 
     # 功能概述
     label_text = "注：该功能为按页签拆分Excel文件，支持后缀为.xls和.xlsx两种格式，并且输出文件与输入文件后缀保持一致。浏览选择单个Excel文件，且选定拆分后的目标目录后，执行拆分即可。"
     output_label = tk.Label(frame, text=label_text, justify=tk.LEFT, wraplength=627)
-    output_label.grid(row=3, column=0, padx=5, pady=20,  columnspan=3)
+    output_label.grid(row=3, column=0, padx=5, pady=20,  columnspan=4)

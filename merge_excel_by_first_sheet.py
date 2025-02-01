@@ -199,30 +199,36 @@ def show_merge_excel_by_first_sheet(frame, root):
     # 源文件夹输入框
     source_label = tk.Label(frame, text="源文件夹:")
     source_label.grid(row=0, column=0, padx=5, pady=5, sticky=tk.E)
+    excel_label = tk.Label(frame, text="*", fg="red")
+    excel_label.grid(row=0, column=1, padx=5, pady=5, sticky=tk.E)
     source_entry = tk.Entry(frame, width=35)
-    source_entry.grid(row=0, column=1, padx=5, pady=5, sticky=tk.EW)
+    source_entry.grid(row=0, column=2, padx=5, pady=5, sticky=tk.EW)
     source_button = tk.Button(frame, text="浏览", command=select_source_folder)
-    source_button.grid(row=0, column=2, padx=5, pady=5, sticky=tk.W)
+    source_button.grid(row=0, column=3, padx=5, pady=5, sticky=tk.W)
 
     # 目标文件输入框
     target_label = tk.Label(frame, text="目标文件:")
     target_label.grid(row=1, column=0, padx=5, pady=5, sticky=tk.E)
+    excel_label = tk.Label(frame, text="*", fg="red")
+    excel_label.grid(row=1, column=1, padx=5, pady=5, sticky=tk.E)
     target_entry = tk.Entry(frame, width=35)
-    target_entry.grid(row=1, column=1, padx=5, pady=5, sticky=tk.EW)
+    target_entry.grid(row=1, column=2, padx=5, pady=5, sticky=tk.EW)
     target_button = tk.Button(frame, text="浏览", command=select_target_file)
-    target_button.grid(row=1, column=2, padx=5, pady=5, sticky=tk.W)
+    target_button.grid(row=1, column=3, padx=5, pady=5, sticky=tk.W)
 
     # 表头行数输入框
     header_label = tk.Label(frame, text="表头行数:")
     header_label.grid(row=2, column=0, padx=5, pady=5, sticky=tk.E)
+    excel_label = tk.Label(frame, text="*", fg="red")
+    excel_label.grid(row=2, column=1, padx=5, pady=5, sticky=tk.E)
     vcmd = (frame.register(validate_input), '%P')
     header_entry = tk.Entry(frame, width=5, validate="key", validatecommand=vcmd)
     header_entry.insert(0, "0")  # 默认值为0
-    header_entry.grid(row=2, column=1, padx=5, pady=5, sticky=tk.W)
+    header_entry.grid(row=2, column=2, padx=5, pady=5, sticky=tk.W)
 
     # 合并按钮
     merge_button = tk.Button(frame, text="合并Excel文件", command=merge_excel)
-    merge_button.grid(row=3, column=1, pady=10, sticky=tk.EW)
+    merge_button.grid(row=3, column=2, pady=10, sticky=tk.EW)
 
     # 功能概述
     label_text = ("注：该功能为按第一个页签的内容行内容将多个Excel文件进行合并，且Excel内容格式保持一致，"
@@ -230,7 +236,7 @@ def show_merge_excel_by_first_sheet(frame, root):
                   "输出合并后的文件统一为.xlsx后缀。浏览选择需要合并的目录，"
                   "且选定保存的目标Excel，输入表头行数程序会自动过滤重复表头，默认0表示没有表头，执行合并即可。")
     output_label = tk.Label(frame, text=label_text, justify=tk.LEFT, wraplength=627)
-    output_label.grid(row=4, column=0, padx=5, pady=20, columnspan=3)
+    output_label.grid(row=4, column=0, padx=5, pady=20, columnspan=4)
 
 
 # 使用示例

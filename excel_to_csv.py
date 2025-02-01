@@ -60,25 +60,29 @@ def show_excel_to_csv(frame, root):
     # 源文件夹输入框
     source_label = tk.Label(frame, text="来源目录:")
     source_label.grid(row=0, column=0, padx=5, pady=5, sticky=tk.E)
+    excel_label = tk.Label(frame, text="*", fg="red")
+    excel_label.grid(row=0, column=1, padx=5, pady=5, sticky=tk.E)
     source_entry = tk.Entry(frame, width=35)
-    source_entry.grid(row=0, column=1, padx=5, pady=5, sticky=tk.EW)
+    source_entry.grid(row=0, column=2, padx=5, pady=5, sticky=tk.EW)
     source_button = tk.Button(frame, text="浏览", command=select_source_folder)
-    source_button.grid(row=0, column=2, padx=5, pady=5, sticky=tk.W)
+    source_button.grid(row=0, column=3, padx=5, pady=5, sticky=tk.W)
 
     # 目标文件输入框
     target_label = tk.Label(frame, text="目标目录:")
     target_label.grid(row=1, column=0, padx=5, pady=5, sticky=tk.E)
+    excel_label = tk.Label(frame, text="*", fg="red")
+    excel_label.grid(row=1, column=1, padx=5, pady=5, sticky=tk.E)
     target_entry = tk.Entry(frame, width=35)
-    target_entry.grid(row=1, column=1, padx=5, pady=5, sticky=tk.EW)
+    target_entry.grid(row=1, column=2, padx=5, pady=5, sticky=tk.EW)
     target_button = tk.Button(frame, text="浏览", command=select_target_folder)
-    target_button.grid(row=1, column=2, padx=5, pady=5, sticky=tk.W)
+    target_button.grid(row=1, column=3, padx=5, pady=5, sticky=tk.W)
 
     # 合并按钮
     merge_button = tk.Button(frame, text="执行转换", command=start_conversion)
-    merge_button.grid(row=2, column=1, padx=10, pady=10,sticky=tk.EW)
+    merge_button.grid(row=2, column=2, padx=10, pady=10,sticky=tk.EW)
 
     # 功能概述
     label_text = ("注：该功能为批量的将Excel转换为csv文件(支持.xlsx和xls后缀的文件)，"
                   "选择好Excel文件来源目录和转换成csv文件的目标目录，执行转换即可。")
     output_label = tk.Label(frame, text=label_text, justify=tk.LEFT, wraplength=627)
-    output_label.grid(row=3, column=0, padx=5, pady=20, columnspan=3)
+    output_label.grid(row=3, column=0, padx=5, pady=20, columnspan=4)
