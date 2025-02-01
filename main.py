@@ -3,6 +3,7 @@ from split_excel_by_sheet import show_split_excel_by_sheet
 from merge_excel_by_sheet import show_merge_excel_by_sheet
 from merge_excel_by_first_sheet import show_merge_excel_by_first_sheet
 from excel_to_csv import show_excel_to_csv
+from export_Table_structure import show_export_Table_structure
 from PIL import Image, ImageTk
 from relax import show_relax  # 导入贪吃蛇游戏启动函数
 
@@ -96,7 +97,7 @@ menu_button4.grid(row=3, column=0, pady=0, sticky="ew")
 menu_button5 = tk.Button(left_frame, width=18, bg="#E5E5E5", text="Excel批量转CSV", cursor="hand2", command=lambda: on_menu_click(menu_button5, lambda: show_excel_to_csv(right_frame, root)))
 menu_button5.grid(row=4, column=0, pady=0, sticky="ew")
 
-menu_button6 = tk.Button(left_frame, width=18, bg="#E5E5E5", text="数据库表结构导出", cursor="hand2", command=lambda: on_menu_click(menu_button6, lambda: show_excel_to_csv(right_frame, root)))
+menu_button6 = tk.Button(left_frame, width=18, bg="#E5E5E5", text="数据库表结构导出", cursor="hand2", command=lambda: on_menu_click(menu_button6, lambda: show_export_Table_structure(right_frame, root)))
 menu_button6.grid(row=5, column=0, pady=0, sticky="ew")
 
 # 关于菜单按钮
